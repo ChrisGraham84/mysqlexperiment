@@ -24,7 +24,7 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '/index.html'));
 })
 
-app.get("/dick", (req, res) => {
+app.get("/test", (req, res) => {
     let sql = "SELECT * FROM table1 LIMIT 1";
    testpool.getConnection((err, con) => {
     if(err) throw err;

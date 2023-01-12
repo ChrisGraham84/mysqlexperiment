@@ -1,3 +1,3 @@
 # mysqlexperiment
  
-#Run:  node app.js
+Run: node app.js

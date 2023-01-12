@@ -6,13 +6,6 @@ const path = require('path');
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-const testpool = mysql.createPool({
-    host: "127.0.0.1",
-    user: "root",
-    password: "",
-    database: "test"
-});
-
 const pool = mysql.createPool({
     host: "127.0.0.1",
     user: "root",
@@ -24,19 +17,9 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '/index.html'));
 })
 
-app.get("/test", (req, res) => {
-    let sql = "SELECT * FROM table1 LIMIT 1";
-   testpool.getConnection((err, con) => {
-    if(err) throw err;
-    console.log('connection as id ' + con.threadId);
-     con.query(sql, (err, rows) => {
-        con.release(); //return the connection to pool
-        if(err) throw err;
-        console.log('the data from the table is: \n', rows)
-        res.send(rows);
-    })
-   });
-});
+app.get('/template', (req, res) => {
+    res.sendFile(path.join(__dirname, '/js/template.js'));
+})
 
 
 app.get("/createdb", (req, res) => {

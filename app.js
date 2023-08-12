@@ -17,6 +17,15 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '/index.html'));
 })
 
+app.get('/charactersheet', (req, res) => {
+    res.sendFile(path.join(__dirname, '/htmltemplates/charactersheet.html'));
+})
+
+app.get('/employeeadmin', (req, res) => {
+    res.sendFile(path.join(__dirname, '/htmltemplates/employeeadmin.html'));
+})
+
+
 app.get('/template', (req, res) => {
     res.sendFile(path.join(__dirname, '/js/template.js'));
 })

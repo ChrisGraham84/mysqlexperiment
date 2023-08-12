@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Character Sheet</title>
+ </head>
+  <style>
+    body { padding: 50px; margin: auto; }
+    input[type=text]{
+      pointer-events: none;
+    }
+    textarea{
+        pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+    <div>Name: <span id="characterName"></span></div>
+    <div>Class: <span id="characterClass"></span></div>
+    <div>Species: <span id="characterSpecies"></span></div>
+    <div id="main">
+        <table>
+            <tr>
+                <td>HP</td>  
+                <td><input aria-label="HP" type="text" /></td>  
+            </tr>
+            <tr>
+                <td>MP</td>  
+                <td><input aria-label="MP" type="text" /></td>  
+            </tr>
+            <tr>
+                <td>Attack</td>  
+                <td><input aria-label="Attack" type="text" /></td>  
+            </tr>
+            <tr>
+                <td>Defense</td>  
+                <td><input aria-label="Defense" type="text" /></td>  
+            </tr>
+            <tr>
+                <td>Stength</td>  
+                <td><input aria-label="Strenth" type="text" /></td>  
+            </tr>
+            <tr>
+                <td>Constitution</td>  
+                <td><input aria-label="Constitution" type="text" /></td>  
+            </tr>
+            <tr>
+                <td>Intelligence</td>  
+                <td><input aria-label="Intelligence" type="text" /></td>  
+            </tr>
+            <tr>
+                <td>Wisdom</td>  
+                <td><input aria-label="Wisdom" type="text" /></td>  
+            </tr>
+            <tr>
+                <td>Charisma</td>  
+                <td><input aria-label="Charisma" type="text" /></td>  
+            </tr>
+            <tr>
+                <td>Abilities</td>  
+                <td><textarea aria-label="Abilities"  rows="12" cols="50" ></textarea></td>  
+            </tr>
+            <tr>
+                <td>
+                    <button title="Add Employee" id="btnAddEmployee">Update</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <script type="text/javascript" src=""></script>    
+</body>
+</html>

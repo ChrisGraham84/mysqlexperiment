@@ -13,6 +13,7 @@ const pool = mysql.createPool({
     database: "nodemysql"
 });
 
+//pages
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '/index.html'));
 })
@@ -25,9 +26,12 @@ app.get('/employeeadmin', (req, res) => {
     res.sendFile(path.join(__dirname, '/htmltemplates/employeeadmin.html'));
 })
 
-
+//scripts
 app.get('/template', (req, res) => {
-    res.sendFile(path.join(__dirname, '/js/template.js'));
+    res.sendFile(path.join(__dirname, './js/template.js'));
+})
+app.get('/empadmin', (req, res) => {
+    res.sendFile(path.join(__dirname, './js/empadmin.js'));
 })
 
 
@@ -73,6 +77,7 @@ app.get('/employee', (req, res) => {
 
 //create an employee
 app.post('/createemployee', (req, res) => {
+    console.log(req);
     if(req.body.name && req.body.designation){
         let post = {name: req.body.name, designation: req.body.designation}
         let sql = "INSERT INTO employee SET ?";

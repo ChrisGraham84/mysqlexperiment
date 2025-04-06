@@ -13,6 +13,7 @@ function getEmployee(){
         if(this.readyState == 4 && this.status == 200){
             //console.log(this.responseText);
             let data = JSON.parse(this.response);
+            if(data === undefined || data.length === 0) return
             testdiv.innerHTML = data[0].name;
             
         }
@@ -21,12 +22,34 @@ function getEmployee(){
     xhhtp.send();
 }
 
+function createEmployeeTable(){
+    let xhhtp = new XMLHttpRequest();
+    xhhtp.onreadystatechange = function() {
+        if(this.readyState == 4 && this.status == 200){
+            //console.log(this.responseText);
+            //let data = JSON.parse(this.response);
+            //testdiv.innerHTML = data[0].name;
+            
+        }
+    };
+    xhhtp.open('GET', '/createemployeetable', true)
+    xhhtp.send();
+}
+
+var btnCreate = document.createElement('button');
+btnCreate.innerText = 'Click to Create Table'
+btnCreate.addEventListener('click', () => {
+    createEmployeeTable();
+    //console.log('clicked');
+});
+
 //create button
-var btn = document.createElement('button');
-btn.innerText = 'Click to Update'
-btn.addEventListener('click', () => {
+var btnGet = document.createElement('button');
+btnGet.innerText = 'Click to Get Employees'
+btnGet.addEventListener('click', () => {
     getEmployee();
     //console.log('clicked');
 });
 
-main.appendChild(btn);
+main.appendChild(btnCreate);
+main.appendChild(btnGet);
